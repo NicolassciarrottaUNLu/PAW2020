@@ -54,16 +54,24 @@ class QueryBuilder
     public function insert($table, $parameters)
     {
         $parameters = $this->cleanParameterName($parameters);
+        $update = [];
+				
+				foreach (array_keys($parameters) as $key) {
+					array_push($update, $key.'=VALUES('.$key.')');
+                }
+                
         $sql = sprintf(
-            'insert into %s (%s) values (%s)',
+            'insert into %s (%s) values (%s) ON DUPLICATE KEY UPDATE %s',
             $table,
             implode(', ', array_keys($parameters)),
-            ':' . implode(', :', array_keys($parameters))
+            ':' . implode(', :', array_keys($parameters)),
+            implode(', ', $update),
         );
 
         try {
             $statement = $this->pdo->prepare($sql);
             $statement->execute($parameters);
+            return $this->pdo->lastInsertId();
         } catch (Exception $e) {
             $this->sendToLog($e);
         }
@@ -76,7 +84,7 @@ class QueryBuilder
     public function remove($table, $id)
     {
         try{
-            $sql="delete from $table where id=$id";
+            $sql="delete from {$table} where id_turno='{$id}'";
             $statement = $this->pdo->prepare($sql);
             $statement->execute();
         }catch(Exception $e){

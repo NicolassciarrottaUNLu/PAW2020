@@ -43,14 +43,6 @@ CREATE TABLE `paciente` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Volcado de datos para la tabla `paciente`
---
-
-INSERT INTO `paciente` (`id_turno`, `nombre`, `email`, `telefono`, `edad`, `talla`, `altura`, `fecha_nacimiento`, `color_pelo`, `fecha_turno`, `hora_turno`, `diagnostico`) VALUES
-(1, 'Nicolas', 'nicolassciarrotta@gmail.com', '2346541804', 24, 45, 182, '1995-07-24', 'morocho', '2020-05-04', '12:00:00', ''),
-(2, 'Nicolas', 'nicolassciarrotta@gmail.com', '2346541804', 24, 45, 182, '1995-07-24', 'morocho', '2020-05-04', '12:00:00', '');
-
---
 -- Índices para tablas volcadas
 --
 
@@ -68,7 +60,7 @@ ALTER TABLE `paciente`
 -- AUTO_INCREMENT de la tabla `paciente`
 --
 ALTER TABLE `paciente`
-  MODIFY `id_turno` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_turno` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

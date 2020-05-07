@@ -13,10 +13,13 @@
 </blockquote>
 {% endif %}
 
+<h1> {{ cabecera }}</h1>
 <form action="/turnos/guardar" method="POST" enctype="multipart/form-data" class="box">
 
     <label class="separate"> Datos personales</label>
     
+    <input type=hidden name="id_turno" value= {{turno.id_turno}}>
+     
     <input type="text" name="nombre"placeholder="*Nombre del paciente" required value="{{ turno.nombre }}">
     <label for="nombre" class = "error"></label>
     
@@ -26,10 +29,10 @@
     <input type="tel" name="telefono" placeholder="*Teléfono" required value="{{ turno.telefono }}">
     <label for="telefono" class = "error"></label>
 
-    <input type="number" name="edad" id="edad" placeholder="Edad" min="1" max="130" value = "{{ edad }}">
+    <input type="number" name="edad" id="edad" placeholder="Edad" min="1" max="130" value = "{{ turno.edad }}">
     <label for="edad" class = "error"></label>
     
-    <input type="number" name="talla" id="talla" placeholder="Talla" min = "20" max ="45" step="1" value="{{ talla }}">
+    <input type="number" name="talla" id="talla" placeholder="Talla" min = "20" max ="45" step="1" value="{{ turno.talla }}">
     <label for="talla" class = "error"></label>
 
     <div id ="boxAltura">
@@ -40,7 +43,7 @@
    
    
     <label for="Fecha_de_nacimiento">Fecha de nacimiento</label>
-    <input type="date" id="fecha_nacimiento" name="fecha_nacimiento" required value="{{ nacimiento }}">
+    <input type="date" id="fecha_nacimiento" name="fecha_nacimiento" required value="{{ turno.fecha_nacimiento }}">
     <label for="fecha_nacimiento" class = "error"></label>
     
     <select name="color_pelo" id="color_pelo">
@@ -51,14 +54,14 @@
     </select>
     
     <label for="date" class = "separate">Fecha y hora de turno:</label>
-    <input type="date" id="fecha_turno" name="fecha_turno" value="{{ fturno }}">
+    <input type="date" id="fecha_turno" name="fecha_turno" value="{{ turno.fecha_turno }}">
     <label for="fecha_turno" class = "error"></label>
 
-    <input type="time" id="hora_turno" name="hora_turno" min="08:00:00" max="17:00:00" step="900" value="{{ tturno }}">
+    <input type="time" id="hora_turno" name="hora_turno" min="08:00:00" max="17:00:00" step="900" value="{{ turno.hora_turno }}">
     <label for="hora_turno" class = "error"></label>
 
     <label for="diagnostico" class = "separate" >Diagnóstico</label>
-    <input type="file" id="diagnostico" name ="diagnostico" accept="image/png, .jpg" value ="{{ diagnostico }}"> 
+    <input type="file" id="diagnostico" name ="diagnostico" accept="image/png, .jpg" value ="{{ turno.diagnostico }}"> 
     <label for="diagnostico" class = "error"></label>
 
     <input type="submit" value="{{ boton }}" name="submit">

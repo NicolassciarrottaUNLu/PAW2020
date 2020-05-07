@@ -21,8 +21,8 @@ class Turno extends Model{
     private $hora_turno="";
     private $diagnostico="";
 
-    public function import($source,$id_turn){
-        $this->id_turno=$id_turn;
+    public function import($source){
+        $this->id_turno=$source["id_turno"];
         $this->nombre = $source["nombre"];
         $this->email= $source["email"];
         $this->telefono= $source["telefono"];
@@ -77,7 +77,7 @@ class Turno extends Model{
 
         if(empty($this->hora_turno)){
             array_push($errores, "*Ingrese horario");
-        }else if(!preg_match("/^(?:2[0-3]|[01][0-9]):[0-5][0-9]$/", $this->tturno)){
+        }else if(preg_match("/^(?:2[0-3]|[01][0-9]):[0-5][0-9]$/", $this->tturno)){
             array_push($errores, "*Ingrese un horario válido");
         }
         
@@ -109,13 +109,18 @@ class Turno extends Model{
     public function getTurno($id){
         $data = $this->db->get(self::$table,$id);
         if(!empty($data)){
-                $this->import($data,$id);
+                $this->import($data);
             }
         return $this->getData();
     }
 
     public function guardar(){
-        $this->id_turno = $this->db->insert(self::$table, $this->getData());
+            if(empty($this->id_turno)){
+                $this->id_turno = $this->db->insert(self::$table, $this->getData());
+            }else{
+                $this->db->insert(self::$table, $this->getData());
+            }
+        return $this->getData();
     }
 
     public function borrar($id){
