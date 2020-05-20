@@ -1,0 +1,99 @@
+table{
+    border: 2px solid;
+    border-collapse: collapse;
+    text-align: center;
+    font-family: Arial;
+}
+
+td{
+    border:2px solid rgb(204,204,204);
+}
+
+tbody tr:nth-child(even){
+    background-color: rgb(232,240,254);;
+}
+
+tbody tr th{
+    font-weight: normal;
+}
+
+thead {
+    border: 2px solid;
+    font-size: 16px;
+}
+
+thead tr:nth-child(2){
+    font-size: 14px;
+    font-weight: lighter;
+}
+
+thead tr:nth-child(1) th{
+    border:2px solid black;
+}
+
+thead tr:nth-child(1) th:nth-child(1){
+    background-color: rgb(17,85,204);
+    width: 90px;
+    color: white;
+    border-left-color: lightgray;
+    border-top-color: lightgray;
+}
+
+thead tr:nth-child(2) th{
+    border:2px solid;
+    height: 90px;
+    width: 100px;
+    border-left-color: lightgray;
+    border-right-color: lightgray;
+    text-align: center;
+}
+
+tbody tr th:nth-child(1){
+    border: 2px solid lightgray;
+    border-right-color: black;
+}
+
+tbody tr:nth-child(16) th, tbody tr:nth-child(16) td,tbody tr:nth-child(11) td:nth-child(7){
+    background-color:rgb(172,201,254);
+    border-bottom-color: black;
+}
+
+tbody tr:nth-child(11) td:nth-child(7){
+    background-color: rgb(17,85,204);
+    color: white;
+    font-weight: bold;
+    vertical-align: bottom;
+}
+
+tbody tr:nth-child(1) td:nth-child(2){
+    background-image: url('images/html5.png');
+}
+
+tbody tr:nth-child(2) td:nth-child(2), tbody tr:nth-child(7) td:nth-child(5){
+    background-image: url('images/phpBackEnd.png');
+}
+
+tbody tr:nth-child(3) td:nth-child(2){
+    background-image: url('images/js.png');
+    
+}
+tbody tr:nth-child(5) td:nth-child(4){
+    background-image: url('images/css.png');
+}
+
+tbody tr:nth-child(10) td:nth-child(6){
+    background-image: url('images/svg.png');
+    border-bottom-color: black;
+}
+
+tbody tr:nth-child(5) td:nth-child(4),tbody tr:nth-child(2) td:nth-child(2), tbody tr:nth-child(7) td:nth-child(5),tbody tr:nth-child(1) td:nth-child(2),tbody tr:nth-child(3) td:nth-child(2){
+    border:2px solid black;
+}
+
+tbody tr:nth-child(1) td:nth-child(3), tbody tr:nth-child(9) td:nth-child(6), tbody tr:nth-child(2) td:nth-child(3),tbody tr:nth-child(4) td:nth-child(3),tbody tr:nth-child(6) td:nth-child(5){
+    border-bottom-color: black;
+}
+
+
+
+

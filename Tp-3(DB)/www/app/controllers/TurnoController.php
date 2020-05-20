@@ -64,7 +64,8 @@ class TurnoController extends Controller
             }else if (count($errores)>0){
                 $errores_total = [
                     'errores' => $errores,
-                    'error' => $error
+                    'error' => $error,
+                    'turno' => $turno
                 ];
                 return view ('form',$errores_total);
             }else{
