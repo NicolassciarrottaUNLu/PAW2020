@@ -1,7 +1,7 @@
-@import url('../swiss721_cn_WebFont/Swiss721CondensedBT.css');
+@import url('../swiss721_cn_WebFont/swiss.css');
 
 html{
-    font-family: arial Narrow;
+    font-family: 'Swiss 721 Condensed BT', 'Arial Narrow';
     --pantone-Azul: rgb(0 110 199);
     --pantone-Verde: rgb(0 150 69);
     
@@ -97,7 +97,7 @@ footer{
     margin-top: 10rem;
     border-top: 0.5rem solid;
     border-top-color: var(--pantone-Azul);
-    padding: 1rem;
+    padding: 0.5rem;
     color: white;
 
 }
