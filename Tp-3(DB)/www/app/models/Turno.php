@@ -52,7 +52,7 @@ class Turno extends Model{
 
         if(empty($this->telefono)){
             array_push($errores,"*Ingrese un teléfono");
-        }else if(preg_match("/\d{4}[ \- ]\d{2}[ ]\d{4}/i", $this->_tel)){
+        }else if(preg_match("/\d{4}[ \- ]\d{2}[ ]\d{4}/i", $this->telefono)){
             array_push($errores, "*Ingrese un teléfono válido");
         }
 
@@ -77,11 +77,11 @@ class Turno extends Model{
 
         if(empty($this->hora_turno)){
             array_push($errores, "*Ingrese horario");
-        }else if(preg_match("/^(?:2[0-3]|[01][0-9]):[0-5][0-9]$/", $this->tturno)){
+        }else if(!preg_match("/^(?:2[0-3]|[01][0-9]):[0-5][0-9]$/", $this->hora_turno)){
             array_push($errores, "*Ingrese un horario válido");
         }
         
-        if(!empty($this->diagnostico) && (!in_array($this->_diagnostico, ["", ".jpg", ".png"]))){
+        if(!empty($this->diagnostico) && (!in_array($this->diagnostico, ["", ".jpg", ".png"]))){
             array_push($errores, "*Ingrese un formato de imagen válido");
         }
     

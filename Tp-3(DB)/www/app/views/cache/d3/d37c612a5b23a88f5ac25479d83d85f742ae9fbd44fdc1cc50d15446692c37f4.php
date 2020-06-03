@@ -87,7 +87,7 @@ class __TwigTemplate_3137c62589d576e4867ffee2be54827adea53f97fd305d99846f4228b09
         echo "\">
     <label for=\"nombre\" class = \"error\">";
         // line 40
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["errores"] ?? null), "nombre", array()), "html", null, true);
+        echo twig_escape_filter($this->env, (($__internal_7cd7461123377b8c9c1b6a01f46c7bbd94bd12e59266005df5e93029ddbc0ec5 = ($context["errores"] ?? null)) && is_array($__internal_7cd7461123377b8c9c1b6a01f46c7bbd94bd12e59266005df5e93029ddbc0ec5) || $__internal_7cd7461123377b8c9c1b6a01f46c7bbd94bd12e59266005df5e93029ddbc0ec5 instanceof ArrayAccess ? ($__internal_7cd7461123377b8c9c1b6a01f46c7bbd94bd12e59266005df5e93029ddbc0ec5[0] ?? null) : null), "html", null, true);
         echo "</label>
     
     <input type=\"email\" name=\"email\" id=\"email\" placeholder=\"*E-mail\" required value=\"";
@@ -166,7 +166,7 @@ class __TwigTemplate_3137c62589d576e4867ffee2be54827adea53f97fd305d99846f4228b09
         echo "\">
     <label for=\"hora_turno\" class = \"error\">";
         // line 77
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["errores"] ?? null), "hora_turno", array()), "html", null, true);
+        echo twig_escape_filter($this->env, (($__internal_3e28b7f596c58d7729642bcf2acc6efc894803703bf5fa7e74cd8d2aa1f8c68a = ($context["errores"] ?? null)) && is_array($__internal_3e28b7f596c58d7729642bcf2acc6efc894803703bf5fa7e74cd8d2aa1f8c68a) || $__internal_3e28b7f596c58d7729642bcf2acc6efc894803703bf5fa7e74cd8d2aa1f8c68a instanceof ArrayAccess ? ($__internal_3e28b7f596c58d7729642bcf2acc6efc894803703bf5fa7e74cd8d2aa1f8c68a[7] ?? null) : null), "html", null, true);
         echo "</label>
 
     <label for=\"diagnostico\" class = \"separate\" >Diagnóstico</label>
@@ -251,7 +251,7 @@ class __TwigTemplate_3137c62589d576e4867ffee2be54827adea53f97fd305d99846f4228b09
     <input type=hidden name=\"id_turno\" value= {{turno.id_turno}}>
      
     <input type=\"text\" name=\"nombre\"placeholder=\"*Nombre del paciente\" required value=\"{{ turno.nombre }}\">
-    <label for=\"nombre\" class = \"error\"> {{ errores.nombre }}</label>
+    <label for=\"nombre\" class = \"error\"> {{ errores[0] }}</label>
     
     <input type=\"email\" name=\"email\" id=\"email\" placeholder=\"*E-mail\" required value=\"{{ turno.email }}\">
     <label for=\"email\" class = \"error\">{{ errores.email }} </label>
@@ -288,7 +288,7 @@ class __TwigTemplate_3137c62589d576e4867ffee2be54827adea53f97fd305d99846f4228b09
     <label for=\"fecha_turno\" class = \"error\">{{ errores.fecha_turno }}</label>
 
     <input type=\"time\" id=\"hora_turno\" name=\"hora_turno\" min=\"08:00:00\" max=\"17:00:00\" step=\"900\" value=\"{{ turno.hora_turno }}\">
-    <label for=\"hora_turno\" class = \"error\">{{ errores.hora_turno }}</label>
+    <label for=\"hora_turno\" class = \"error\">{{ errores[7] }}</label>
 
     <label for=\"diagnostico\" class = \"separate\" >Diagnóstico</label>
     <input type=\"file\" id=\"diagnostico\" name =\"diagnostico\" accept=\"image/png, .jpg\" value =\"{{ turno.diagnostico }}\"> 

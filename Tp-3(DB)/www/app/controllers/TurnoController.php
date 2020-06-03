@@ -62,10 +62,12 @@ class TurnoController extends Controller
         if($tamanio_imagen>1000000){    
                 $error = "Imagen muy grande, maximo 10MB";
             }else if (count($errores)>0){
+                $boton = "Enviar";
                 $errores_total = [
                     'errores' => $errores,
                     'error' => $error,
-                    'turno' => $turno
+                    'turno' => $turno,
+                    'boton' => $boton,
                 ];
                 return view ('form',$errores_total);
             }else{
